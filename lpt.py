@@ -1,4 +1,5 @@
 import arcpy
+import os
 from math import ceil
 
 class Length(object):
@@ -15,18 +16,29 @@ class Length(object):
 								 direction = "Input",
 								 parameterType = "Required",
 								 datatype = "DEFeatureClass")
-		param1 = arcpy.Parameter(name = "out_lines",
-								 displayName = "Output Partitioned Lines",
-								 direction = "Output",
+		param1 = arcpy.Parameter(name = "workspace",
+								 displayName = "Workspace",
+								 direction = "Input",
 								 parameterType = "Required",
-								 datatype = "DEFeatureClass")
-		param2 = arcpy.Parameter(name = "length",
+								 datatype = "DEWorkspace")
+		param2 = arcpy.Parameter(name = "out_lines",
+								 displayName = "Output Partitioned Lines",
+								 direction = "Input",
+								 parameterType = "Required",
+								 datatype = "GPString")					 
+		param3 = arcpy.Parameter(name = "length",
 								 displayName = "Approximate Lengths",
 								 direction = "Input",
 								 parameterType = "Required",
 								 datatype = "GPLong")
+		param4 = arcpy.Parameter(name="overwrite_output",
+		                         displayName="Overwrite Output",
+		                         direction="Input",
+		                         parameterType="Required",
+		                         datatype="GPBoolean")
+		param4.value = True
 		
-		params = [param0, param1, param2]
+		params = [param0, param1, param2, param3, param4]
 		return params
 
 	def isLicensed(self):
@@ -47,8 +59,13 @@ class Length(object):
 	def execute(self, parameters, messages):
 		"""The source code of the tool."""
 		in_lines = parameters[0].valueAsText
-		out_lines = parameters[1].valueAsText
-		length = parameters[2].value
+		workspace = parameters[1].valueAsText
+		out_feature = parameters[2].valueAsText
+		
+		out_lines = os.path.join(workspace, out_feature)
+		
+		length = parameters[3].value
+		arcpy.env.overwriteOutput = parameters[4].value
 		
 		out_mem = "in_memory/out"
 		
