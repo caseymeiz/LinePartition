@@ -11,20 +11,20 @@ class Proportion(object):
 	def getParameterInfo(self):
 		"""Define parameter definitions"""
 		param0 = arcpy.Parameter(name = "in_lines",
-								 displayName = "Input Lines",
-								 direction = "Input",
-								 parameterType = "Required",
-								 datatype = "DEFeatureClass")
+		                         displayName = "Input Lines",
+		                         direction = "Input",
+		                         parameterType = "Required",
+		                         datatype = "DEFeatureClass")
 		param1 = arcpy.Parameter(name = "out_lines",
-								 displayName = "Output Partitioned Lines",
-								 direction = "Output",
-								 parameterType = "Required",
-								 datatype = "DEFeatureClass")
+		                         displayName = "Output Partitioned Lines",
+		                         direction = "Output",
+		                         parameterType = "Required",
+		                         datatype = "DEFeatureClass")
 		param2 = arcpy.Parameter(name = "proportion",
-								 displayName = "Number of parts per line",
-								 direction = "Input",
-								 parameterType = "Required",
-								 datatype = "GPLong")
+		                         displayName = "Number of parts per line",
+		                         direction = "Input",
+		                         parameterType = "Required",
+		                         datatype = "GPLong")
 		
 		params = [param0, param1, param2]
 		return params

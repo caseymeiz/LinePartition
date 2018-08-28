@@ -12,25 +12,25 @@ class Length(object):
 	def getParameterInfo(self):
 		"""Define parameter definitions"""
 		param0 = arcpy.Parameter(name = "in_lines",
-								 displayName = "Input Lines",
-								 direction = "Input",
-								 parameterType = "Required",
-								 datatype = "DEFeatureClass")
+		                         displayName = "Input Lines",
+		                         direction = "Input",
+		                         parameterType = "Required",
+		                         datatype = "DEFeatureClass")
 		param1 = arcpy.Parameter(name = "workspace",
-								 displayName = "Workspace",
-								 direction = "Input",
-								 parameterType = "Required",
-								 datatype = "DEWorkspace")
+		                         displayName = "Workspace",
+		                         direction = "Input",
+		                         parameterType = "Required",
+		                         datatype = "DEWorkspace")
 		param2 = arcpy.Parameter(name = "out_lines",
-								 displayName = "Output Partitioned Lines",
-								 direction = "Input",
-								 parameterType = "Required",
-								 datatype = "GPString")					 
+		                         displayName = "Output Partitioned Lines",
+		                         direction = "Input",
+		                         parameterType = "Required",
+		                         datatype = "GPString")					 
 		param3 = arcpy.Parameter(name = "length",
-								 displayName = "Approximate Lengths",
-								 direction = "Input",
-								 parameterType = "Required",
-								 datatype = "GPLong")
+		                         displayName = "Approximate Lengths",
+		                         direction = "Input",
+		                         parameterType = "Required",
+		                         datatype = "GPLong")
 		param4 = arcpy.Parameter(name="overwrite_output",
 		                         displayName="Overwrite Output",
 		                         direction="Input",
