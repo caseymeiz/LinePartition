@@ -10,7 +10,7 @@ ArcGIS license: Basic
 
 **Original**
 
-![Original](original.png)
+![Original](img/original.png)
 
 
 
@@ -18,9 +18,9 @@ ArcGIS license: Basic
 
 **By proportions (3)**
 
-![Proportion](proportion.png)
+![Proportion](img/proportion.png)
 
 **By length (100 feet)**
 
-![by length](bylength.png)
+![by length](img/bylength.png)
 
