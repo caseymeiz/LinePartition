@@ -74,6 +74,7 @@ class Length(object):
 						icur.insertRow(irow)
 						
 		arcpy.CopyFeatures_management(out_mem, out_lines)
+		arcpy.Delete_management(out_mem)
 		
 		return
 
